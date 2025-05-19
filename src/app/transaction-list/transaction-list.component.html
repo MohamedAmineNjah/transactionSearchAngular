@@ -1,0 +1,23 @@
+<div class="container mt-5">
+    <h2>Transaction Search</h2>
+    <div class="form-group search-container">
+        <input [(ngModel)]="searchId" class="form-control" placeholder="Enter Transaction ID">
+        <button (click)="search()" class="btn btn-primary mt-2">Search</button>
+    </div>
+    @if(transactions.length > 0){
+    <div class="mt-4">
+        <h4>Transactions list</h4>
+        <ul class="list-group">
+            <!-- *ngFor="let transaction of transactions" -->
+            @for(transaction of transactions; track transaction.primaryId){
+            <li class="list-group-item">
+                <strong>ID:</strong> {{transaction.primaryId}} |
+                <strong>Second ID:</strong> {{transaction.secondaryId}} |
+                <strong>Type:</strong> {{transaction.eventType}} |
+                <strong>Date:</strong> {{transaction.eventDate}}
+            </li>
+            }
+        </ul>
+    </div>
+    }
+</div>
