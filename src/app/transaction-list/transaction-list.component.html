@@ -2,7 +2,7 @@
     <h2>Transaction Search</h2>
     <div class="form-group search-container">
         <input [(ngModel)]="searchId" class="form-control" placeholder="Enter Transaction ID">
-        <button (click)="search()" class="btn btn-primary mt-2">Search</button>
+        <button [disabled]="searchId===''" (click)="search()" class="btn btn-primary mt-2">Search</button>
     </div>
     @if(transactions.length > 0){
     <div class="mt-4">
